@@ -1,0 +1,527 @@
+[
+    {
+        "kana": "あ",
+        "romaji": "a",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "い",
+        "romaji": "i",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "う",
+        "romaji": "u",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "え",
+        "romaji": "e",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "お",
+        "romaji": "o",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "か",
+        "romaji": "ka",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "き",
+        "romaji": "ki",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "く",
+        "romaji": "ku",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "け",
+        "romaji": "ke",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "こ",
+        "romaji": "ko",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "さ",
+        "romaji": "sa",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "し",
+        "romaji": "shi",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "す",
+        "romaji": "su",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "せ",
+        "romaji": "se",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "そ",
+        "romaji": "so",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "た",
+        "romaji": "ta",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ち",
+        "romaji": "chi",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "つ",
+        "romaji": "tsu",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "て",
+        "romaji": "te",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "と",
+        "romaji": "to",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "な",
+        "romaji": "na",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "に",
+        "romaji": "ni",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ぬ",
+        "romaji": "nu",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ね",
+        "romaji": "ne",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "の",
+        "romaji": "no",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "は",
+        "romaji": "ha",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ひ",
+        "romaji": "hi",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ふ",
+        "romaji": "hu",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "へ",
+        "romaji": "he",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ほ",
+        "romaji": "ho",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ま",
+        "romaji": "ma",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "み",
+        "romaji": "mi",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "む",
+        "romaji": "mu",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "め",
+        "romaji": "me",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "も",
+        "romaji": "mo",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "や",
+        "romaji": "ya",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ゆ",
+        "romaji": "yu",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "よ",
+        "romaji": "yo",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ら",
+        "romaji": "ra",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "り",
+        "romaji": "ri",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "る",
+        "romaji": "ru",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "れ",
+        "romaji": "re",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ろ",
+        "romaji": "ro",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "わ",
+        "romaji": "wa",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "を",
+        "romaji": "wo",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "ん",
+        "romaji": "n",
+        "kind": "gojūon"
+    },
+    {
+        "kana": "が",
+        "romaji": "ga",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ぎ",
+        "romaji": "gi",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ぐ",
+        "romaji": "gu",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "げ",
+        "romaji": "ge",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ご",
+        "romaji": "go",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ざ",
+        "romaji": "za",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "じ",
+        "romaji": "ji",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ず",
+        "romaji": "zu",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ぜ",
+        "romaji": "ze",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ぞ",
+        "romaji": "zo",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "だ",
+        "romaji": "da",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ぢ",
+        "romaji": "ji",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "づ",
+        "romaji": "zu",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "で",
+        "romaji": "de",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ど",
+        "romaji": "do",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ば",
+        "romaji": "ba",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "び",
+        "romaji": "bi",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ぶ",
+        "romaji": "bu",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "べ",
+        "romaji": "be",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ぼ",
+        "romaji": "bo",
+        "kind": "dakuon"
+    },
+    {
+        "kana": "ぱ",
+        "romaji": "pa",
+        "kind": "handakuon"
+    },
+    {
+        "kana": "ぴ",
+        "romaji": "pi",
+        "kind": "handakuon"
+    },
+    {
+        "kana": "ぷ",
+        "romaji": "pu",
+        "kind": "handakuon"
+    },
+    {
+        "kana": "ぺ",
+        "romaji": "pe",
+        "kind": "handakuon"
+    },
+    {
+        "kana": "ぽ",
+        "romaji": "po",
+        "kind": "handakuon"
+    },
+    {
+        "kana": "っ",
+        "romaji": "(pause)",
+        "kind": "sokuon"
+    },
+    {
+        "kana": "きゃ",
+        "romaji": "kya",
+        "kind": "yōon"
+    },
+    {
+        "kana": "きゅ",
+        "romaji": "kyu",
+        "kind": "yōon"
+    },
+    {
+        "kana": "きょ",
+        "romaji": "kyo",
+        "kind": "yōon"
+    },
+    {
+        "kana": "しゃ",
+        "romaji": "sha",
+        "kind": "yōon"
+    },
+    {
+        "kana": "しゅ",
+        "romaji": "shu",
+        "kind": "yōon"
+    },
+    {
+        "kana": "しょ",
+        "romaji": "sho",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ちゃ",
+        "romaji": "cha",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ちゅ",
+        "romaji": "chu",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ちょ",
+        "romaji": "cho",
+        "kind": "yōon"
+    },
+    {
+        "kana": "にゃ",
+        "romaji": "nya",
+        "kind": "yōon"
+    },
+    {
+        "kana": "にゅ",
+        "romaji": "nyu",
+        "kind": "yōon"
+    },
+    {
+        "kana": "にょ",
+        "romaji": "nyo",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ひゃ",
+        "romaji": "hya",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ひゅ",
+        "romaji": "hyu",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ひょ",
+        "romaji": "hyo",
+        "kind": "yōon"
+    },
+    {
+        "kana": "みゃ",
+        "romaji": "mya",
+        "kind": "yōon"
+    },
+    {
+        "kana": "みゅ",
+        "romaji": "myu",
+        "kind": "yōon"
+    },
+    {
+        "kana": "みょ",
+        "romaji": "myo",
+        "kind": "yōon"
+    },
+    {
+        "kana": "りゃ",
+        "romaji": "rya",
+        "kind": "yōon"
+    },
+    {
+        "kana": "りゅ",
+        "romaji": "ryu",
+        "kind": "yōon"
+    },
+    {
+        "kana": "りょ",
+        "romaji": "ryo",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ぎゃ",
+        "romaji": "gya",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ぎゅ",
+        "romaji": "gyu",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ぎょ",
+        "romaji": "gyo",
+        "kind": "yōon"
+    },
+    {
+        "kana": "じゃ",
+        "romaji": "ja",
+        "kind": "yōon"
+    },
+    {
+        "kana": "じゅ",
+        "romaji": "ju",
+        "kind": "yōon"
+    },
+    {
+        "kana": "じょ",
+        "romaji": "jo",
+        "kind": "yōon"
+    },
+    {
+        "kana": "びゃ",
+        "romaji": "bya",
+        "kind": "yōon"
+    },
+    {
+        "kana": "びゅ",
+        "romaji": "byu",
+        "kind": "yōon"
+    },
+    {
+        "kana": "びょ",
+        "romaji": "byo",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ぴゃ",
+        "romaji": "pya",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ぴゅ",
+        "romaji": "pyu",
+        "kind": "yōon"
+    },
+    {
+        "kana": "ぴょ",
+        "romaji": "pyo",
+        "kind": "yōon"
+    }
+]
