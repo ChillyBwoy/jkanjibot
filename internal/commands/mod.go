@@ -18,9 +18,11 @@ type CommandList = []tgbotapi.BotCommand
 
 func MakeCommands() (CommandMap, CommandList) {
 	hiraganaCommand := NewHiraganaCommand()
+	kanjiCommand := NewKanjiCommand()
 
 	commandsMap := make(map[string]Command)
 	commandsMap[hiraganaCommand.GetCommand()] = hiraganaCommand
+	commandsMap[kanjiCommand.GetCommand()] = kanjiCommand
 
 	commandsList := make([]tgbotapi.BotCommand, 0)
 

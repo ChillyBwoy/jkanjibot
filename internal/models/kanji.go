@@ -1,5 +1,9 @@
 package models
 
+import (
+	"math/rand"
+)
+
 type JLPT int8
 
 const (
@@ -10,43 +14,34 @@ const (
 	JlptN5
 )
 
-type ReadingType string
-
-const (
-	Onyomi  ReadingType = "onyomi"
-	Kunyomi ReadingType = "kunyomi"
-)
-
 type Reading struct {
-	Reading string      `json:"reading"`
-	Meaning string      `json:"meaning"`
-	Kind    ReadingType `json:"kind"`
+	Reading string   `json:"reading"`
+	Meaning []string `json:"meaning"`
 }
 
-func NewReading(reading, meaning string, kind ReadingType) *Reading {
-	return &Reading{
-		Reading: reading,
-		Meaning: meaning,
-		Kind:    kind,
-	}
+type KanjiChar struct {
+	Char    string    `json:"kanji"`
+	ExtId   int       `json:"ext_id"`
+	Key     int       `json:"key"`
+	Strokes int       `json:"strokes"`
+	Jlpt    JLPT      `json:"jlpt"`
+	Onyomi  []Reading `json:"onyomi"`
+	Kunyomi []Reading `json:"kunyomi"`
 }
 
 type Kanji struct {
-	Char     string `json:"char"`
-	ExtId    int    `json:"extId"`
-	ExtKey   int    `json:"extKey"`
-	Strokes  int    `json:"strokes"`
-	Jlpt     JLPT   `json:"jlpt"`
-	Readings []Reading
+	Items *[]KanjiChar
 }
 
-func NewKanji(char string, ext_id, ext_key, strokes int, jlpt JLPT, readings []Reading) *Kanji {
-	return &Kanji{
-		Char:     char,
-		ExtId:    ext_id,
-		ExtKey:   ext_key,
-		Strokes:  strokes,
-		Jlpt:     jlpt,
-		Readings: readings,
+func (k *Kanji) RandomSet(n int) []KanjiChar {
+	size := len(*k.Items)
+	idx := rand.Perm(size)[:n]
+
+	pick := make([]KanjiChar, 0, n)
+
+	for _, idx := range idx {
+		pick = append(pick, (*k.Items)[idx])
 	}
+
+	return pick
 }

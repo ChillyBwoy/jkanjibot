@@ -11,7 +11,7 @@ type KanaQuiz struct {
 	Hiragana *models.Kana
 }
 
-func NewHKanaQuiz(path string) *KanaQuiz {
+func NewKanaQuiz(path string) *KanaQuiz {
 	hiragana, err := readers.ReadKana(path)
 
 	if err != nil {

@@ -24,15 +24,6 @@ type Kana struct {
 	Chars *[]Mora
 }
 
-func (kana *Kana) RandomMora() *Mora {
-	size := len(*kana.Chars)
-	idx := rand.Intn(size)
-
-	pick := (*kana.Chars)[idx]
-
-	return &pick
-}
-
 func (kana *Kana) RandomSet(n int) []Mora {
 	size := len(*kana.Chars)
 	idxs := rand.Perm(size)[:n]

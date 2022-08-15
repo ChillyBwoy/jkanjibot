@@ -5,7 +5,9 @@ import (
 	"jkanjibot/internal/commands"
 	"jkanjibot/internal/quiz"
 	"log"
+	"math/rand"
 	"os"
+	"time"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"github.com/joho/godotenv"
@@ -16,6 +18,7 @@ var (
 )
 
 func init() {
+	rand.Seed(time.Now().UnixNano())
 	err := godotenv.Load(".env")
 
 	if err != nil {
@@ -23,7 +26,8 @@ func init() {
 	}
 
 	appState = &app.AppState{
-		HiraganaQuiz: quiz.NewHKanaQuiz("data/hiragana.json"),
+		HiraganaQuiz: quiz.NewKanaQuiz("data/hiragana.json"),
+		KanjiQuiz:    quiz.NewKanjiQuiz(),
 	}
 }
 
@@ -50,15 +54,23 @@ func main() {
 	updates := bot.GetUpdatesChan(u)
 
 	for update := range updates {
-		if update.Message.IsCommand() {
-			cmd := update.Message.Command()
+		if update.Message == nil {
+			continue
+		}
 
-			matchedCommand := commandsMap[cmd]
-			if matchedCommand != nil {
-				if err := matchedCommand.Handler(appState, bot, &update); err != nil {
-					log.Panic(err)
-				}
-			}
+		if !update.Message.IsCommand() {
+			continue
+		}
+
+		cmd := update.Message.Command()
+		matchedCommand := commandsMap[cmd]
+
+		if matchedCommand == nil {
+			continue
+		}
+
+		if err := matchedCommand.Handler(appState, bot, &update); err != nil {
+			log.Panic("Unable to handle command", err)
 		}
 	}
 }
