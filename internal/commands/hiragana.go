@@ -33,19 +33,21 @@ func (c *HiraganaCommand) BotCommand() tgbotapi.BotCommand {
 	}
 }
 
-func (c *HiraganaCommand) Handler(appState *app.AppState, bot *tgbotapi.BotAPI, update *tgbotapi.Update) error {
+func (c *HiraganaCommand) Handler(appState *app.AppState, bot *tgbotapi.BotAPI, update *tgbotapi.Update) (*tgbotapi.Message, error) {
 	question, err := appState.HiraganaQuiz.GetPayload()
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	poll := tgbotapi.NewPoll(update.Message.Chat.ID, question.Question, question.Choices...)
 	poll.Type = "quiz"
 	poll.CorrectOptionID = int64(question.Answer)
 
-	if _, err := bot.Send(poll); err != nil {
-		return err
+	msg, err := bot.Send(poll)
+
+	if err != nil {
+		return nil, err
 	}
 
-	return nil
+	return &msg, nil
 }

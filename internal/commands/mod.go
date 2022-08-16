@@ -10,7 +10,7 @@ type Command interface {
 	GetDescription() string
 	GetCommand() string
 	BotCommand() tgbotapi.BotCommand
-	Handler(appState *app.AppState, bot *tgbotapi.BotAPI, update *tgbotapi.Update) error
+	Handler(appState *app.AppState, bot *tgbotapi.BotAPI, update *tgbotapi.Update) (*tgbotapi.Message, error)
 }
 
 type CommandMap = map[string]Command

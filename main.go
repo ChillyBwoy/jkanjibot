@@ -20,6 +20,6 @@ func init() {
 }
 
 func main() {
-	app := server.NewApp(os.Getenv("TELEGRAM_BOT_TOKEN"), true)
-	app.Run()
+	app := server.NewApp(os.Getenv("TELEGRAM_BOT_TOKEN"), false)
+	app.RunServer(os.Getenv("TELEGRAM_BOT_DOMAIN"), os.Getenv("TELEGRAM_BOT_PORT"))
 }
