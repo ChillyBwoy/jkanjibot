@@ -1,9 +1,7 @@
 package server
 
 import (
-	"encoding/json"
 	"fmt"
-	"io"
 	"jkanjibot/internal/app"
 	"jkanjibot/internal/commands"
 	"jkanjibot/internal/quiz"
@@ -71,32 +69,30 @@ func (a *App) dispatch(update tgbotapi.Update) *tgbotapi.Message {
 	return msg
 }
 
-func (a *App) Handle(w http.ResponseWriter, r *http.Request) {
-	defer r.Body.Close()
-	body, _ := io.ReadAll(r.Body)
+func (a *App) UpdateWebhook(host, port string) {
+	addr := fmt.Sprintf("https://%s:%s/webhook/%s", host, port, a.Bot.Token)
 
-	var update tgbotapi.Update
-	if err := json.Unmarshal(body, &update); err != nil {
-		log.Fatal("Error en el update", err)
-	}
+	log.Printf("Starting webhook at %s ...", addr)
 
-	log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
-
-	msg := a.dispatch(update)
-	if msg != nil {
-		w.Header().Add("Content-Type", "application/json")
-		log.Printf("%+v\n", msg)
-	}
-}
-
-func (a *App) RunServer(host, port string) {
-	addr := fmt.Sprintf("%s:%s/%s", host, port, a.Bot.Token)
 	wh, _ := tgbotapi.NewWebhook(addr)
 
 	_, err := a.Bot.Request(wh)
+
 	if err != nil {
 		log.Fatal(err)
 	}
+}
+
+func (a *App) startServer(port string) {
+	log.Printf("Start server at %s", port)
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
+		log.Fatal(err)
+	}
+}
+
+func (a *App) HandleWebhook(host, port string) {
+	// Set new webhook
+	a.UpdateWebhook(host, port)
 
 	info, err := a.Bot.GetWebhookInfo()
 	if err != nil {
@@ -107,8 +103,9 @@ func (a *App) RunServer(host, port string) {
 		log.Printf("Telegram callback failed: %s", info.LastErrorMessage)
 	}
 
-	updates := a.Bot.ListenForWebhook("/" + a.Bot.Token)
-	go http.ListenAndServe("0.0.0.0:8443", nil)
+	updates := a.Bot.ListenForWebhook("/webhook/" + a.Bot.Token)
+
+	go a.startServer(port)
 
 	for update := range updates {
 		a.dispatch(update)
@@ -116,6 +113,8 @@ func (a *App) RunServer(host, port string) {
 }
 
 func (a *App) Run() {
+	log.Printf("Starting app...")
+
 	u := tgbotapi.NewUpdate(0)
 	u.Timeout = 60
 

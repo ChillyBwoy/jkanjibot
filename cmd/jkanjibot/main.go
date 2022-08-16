@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"jkanjibot/internal/server"
 	"log"
 	"math/rand"
@@ -15,11 +16,22 @@ func init() {
 	err := godotenv.Load(".env")
 
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Println("Error loading .env file")
 	}
 }
 
 func main() {
+	var dev bool
+
+	flag.BoolVar(&dev, "dev", false, "dev mode")
+
+	flag.Parse()
+
 	app := server.NewApp(os.Getenv("TELEGRAM_BOT_TOKEN"), true)
-	app.Run()
+
+	if dev {
+		app.Run()
+	} else {
+		app.HandleWebhook(os.Getenv("TELEGRAM_BOT_HOST"), os.Getenv("TELEGRAM_BOT_PORT"))
+	}
 }
