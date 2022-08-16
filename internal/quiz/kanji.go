@@ -2,6 +2,7 @@ package quiz
 
 import (
 	"fmt"
+	"jkanjibot/internal/containers"
 	"jkanjibot/internal/models"
 	"jkanjibot/internal/readers"
 	"log"
@@ -10,11 +11,13 @@ import (
 )
 
 type KanjiQuiz struct {
-	Kanji *models.Kanji
+	Kanji *containers.ItemContainer[models.Kanji]
 }
 
-func NewKanjiQuiz() *KanjiQuiz {
-	kanji, err := readers.ReadKanji()
+func NewKanjiQuiz(path string) *KanjiQuiz {
+	reader := &readers.CharReader[models.Kanji]{}
+
+	kanji, err := reader.Read(path)
 
 	if err != nil {
 		log.Panic(err)
@@ -27,7 +30,7 @@ func NewKanjiQuiz() *KanjiQuiz {
 	return cmd
 }
 
-func (c *KanjiQuiz) GetPayload() (*QuizQuestion, error) {
+func (c *KanjiQuiz) GetPayload() (*models.QuizQuestion, error) {
 	kanji := c.Kanji.RandomSet(4)
 
 	choices := make([]string, 0)
@@ -55,7 +58,7 @@ func (c *KanjiQuiz) GetPayload() (*QuizQuestion, error) {
 
 	idx := rand.Intn(len(kanji))
 
-	question := &QuizQuestion{
+	question := &models.QuizQuestion{
 		Question: kanji[idx].Char,
 		Choices:  choices,
 		Answer:   idx,

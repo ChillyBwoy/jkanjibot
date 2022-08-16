@@ -1,9 +1,5 @@
 package models
 
-import (
-	"math/rand"
-)
-
 type MoraKind string
 
 const (
@@ -18,21 +14,4 @@ type Mora struct {
 	Kana   string   `json:"kana"`
 	Kind   MoraKind `json:"type"`
 	Romaji string   `json:"romaji"`
-}
-
-type Kana struct {
-	Chars *[]Mora
-}
-
-func (kana *Kana) RandomSet(n int) []Mora {
-	size := len(*kana.Chars)
-	idxs := rand.Perm(size)[:n]
-
-	pick := make([]Mora, 0, n)
-
-	for _, idx := range idxs {
-		pick = append(pick, (*kana.Chars)[idx])
-	}
-
-	return pick
 }

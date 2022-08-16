@@ -1,9 +1,5 @@
 package models
 
-import (
-	"math/rand"
-)
-
 type JLPT int8
 
 const (
@@ -19,7 +15,7 @@ type Reading struct {
 	Meaning []string `json:"meaning"`
 }
 
-type KanjiChar struct {
+type Kanji struct {
 	Char    string    `json:"kanji"`
 	ExtId   int       `json:"ext_id"`
 	Key     int       `json:"key"`
@@ -27,21 +23,4 @@ type KanjiChar struct {
 	Jlpt    JLPT      `json:"jlpt"`
 	Onyomi  []Reading `json:"onyomi"`
 	Kunyomi []Reading `json:"kunyomi"`
-}
-
-type Kanji struct {
-	Items *[]KanjiChar
-}
-
-func (k *Kanji) RandomSet(n int) []KanjiChar {
-	size := len(*k.Items)
-	idx := rand.Perm(size)[:n]
-
-	pick := make([]KanjiChar, 0, n)
-
-	for _, idx := range idx {
-		pick = append(pick, (*k.Items)[idx])
-	}
-
-	return pick
 }

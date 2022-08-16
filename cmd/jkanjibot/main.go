@@ -27,7 +27,7 @@ func init() {
 
 	appState = &app.AppState{
 		HiraganaQuiz: quiz.NewKanaQuiz("data/hiragana.json"),
-		KanjiQuiz:    quiz.NewKanjiQuiz(),
+		KanjiQuiz:    quiz.NewKanjiQuiz("data/kanji.json"),
 	}
 }
 
