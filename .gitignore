@@ -1,4 +1,8 @@
 .DS_Store
 .vscode
 .env
+app.yaml
+
 target/
+dist/
+bin/
